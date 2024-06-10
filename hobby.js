@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     // bartxt
     $('#main-nav a').on({
         mouseover: function() {
@@ -33,24 +32,24 @@ $(document).ready(function() {
                 transition: "width 1.5s ease"
             });
         },
-        function() {
-            $(this).find("span:nth-child(1)").css({
-                height: "0",
-                transition: "height 1.5s ease"
-            });
-            $(this).find("span:nth-child(2)").css({
-                width: "0",
-                transition: "width 1.5s ease"
-            });
-            $(this).find("span:nth-child(3)").css({
-                height: "0",
-                transition: "height 1.5s ease"
-            });
-            $(this).find("span:nth-child(4)").css({
-                width: "0",
-                transition: "width 1.5s ease"
-            });
-        }
+    function() {
+        $(this).find("span:nth-child(1)").css({
+            height: "0",
+            transition: "height 1.5s ease"
+        });
+        $(this).find("span:nth-child(2)").css({
+            width: "0",
+            transition: "width 1.5s ease"
+        });
+        $(this).find("span:nth-child(3)").css({
+            height: "0",
+            transition: "height 1.5s ease"
+        });
+        $(this).find("span:nth-child(4)").css({
+            width: "0",
+            transition: "width 1.5s ease"
+        });
+    }
     );
     $('#fs-btn').click(function(){
         $(this).append(': BILLIE EILISH');
@@ -64,14 +63,33 @@ $(document).ready(function() {
     $('#fso-btn').click(function(){
         $(this).append(': 群青');
     });
-    $('#fb-btn').click(function(){
-        $(this).append(': YOASOBI');
+    $('#fms-btn').click(function(){
+        $(this).append(': jpop');
     });
-    $('#fso-btn').click(function(){
-        $(this).append(': 群青');
+    $('#fama-btn').click(function(){
+        $(this).append(': 芙莉蓮');
+    });
+    $('#fiv-btn').click(function(){
+        $(this).append(': 玩遊戲');
+    });
+    $('#fg-btn').click(function(){
+        $(this).append(': SEKIRO');
+    });
+    $('#fsp-btn').click(function(){
+        $(this).append(': 打羽球');
+    });
+    $('#fsp2-btn').click(function(){
+        $(this).append(': 打排球');
+    });
+    $('#fla-btn').click(function(){
+        $(this).append(': 蛤?什麼程式語言...');
+    });
+    $('#wxl-btn').click(function(){
+        $(this).append('普拿疼');
     });
     
 });
+
 $('.hamburger-menu').click(function(){
     $('.fullscreen-menu').toggleClass('display_nav');
     $('div:not(.fullscreen-menu,.hamburger-menu,.line)').toggleClass('blur');
@@ -83,30 +101,56 @@ $('.fullscreen-menu:not(ul)').click(function(){//若全屏選單已經開啟且�
     $('div:not(.fullscreen-menu,.hamburger-menu,.line)').toggleClass('blur');
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('.nav-link');
-    const pages = document.querySelectorAll('.page');
+$(document).ready(function() {
+    const links = $('.nav-link');
+    const pages = $('.page');
 
     function showPage(hash) {
-        pages.forEach(page => {
-            if ('#' + page.id === hash) {
-                page.classList.add('active');
+        pages.each(function() {
+            if ('#' + $(this).attr('id') === hash) {
+                $(this).addClass('active');
             } else {
-                page.classList.remove('active');
+                $(this).removeClass('active');
             }
         });
     }
 
-    links.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const hash = this.getAttribute('href');
-            window.location.hash = hash;
-            showPage(hash);
-        });
+    links.on('click', function(event) {
+        event.preventDefault();
+        const hash = $(this).attr('href');
+        window.location.hash = hash;
+        showPage(hash);
     });
 
     // 初始顯示頁面
     const currentHash = window.location.hash || '#home';
     showPage(currentHash);
 });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const links = document.querySelectorAll('.nav-link');
+//     const pages = document.querySelectorAll('.page');
+
+//     function showPage(hash) {
+//         pages.forEach(page => {
+//             if ('#' + page.id === hash) {
+//                 page.classList.add('active');
+//             } else {
+//                 page.classList.remove('active');
+//             }
+//         });
+//     }
+
+//     links.forEach(link => {
+//         link.addEventListener('click', function(event) {
+//             event.preventDefault();
+//             const hash = this.getAttribute('href');
+//             window.location.hash = hash;
+//             showPage(hash);
+//         });
+//     });
+
+//     // 初始顯示頁面
+//     const currentHash = window.location.hash || '#home';
+//     showPage(currentHash);
+// });

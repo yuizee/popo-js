@@ -5,6 +5,21 @@
     font-weight: bold;
     color: aliceblue;
   }
+footer{
+    margin-top: 20px;
+    background-color:#d3dbe0;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 10px 20px;
+}
+footer p{
+  background-color: #ffffff00;
+}
+footer p small{
+  background-color: #ffffff00;
+}
+
         /* 字型設計＾*/
 
 header {
@@ -15,7 +30,6 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 0px 8px rgba(0,0,0,0.16);
@@ -50,7 +64,10 @@ header {
 .acc-div{
     background-color: rgba(255, 255, 255, 0);
     margin-top: 170px;
-
+}
+.sma-div{
+  background-color: rgba(255, 255, 255, 0);
+  margin-top: 150px;
 }
 .main-div{
   margin-right: 70px;
